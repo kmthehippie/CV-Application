@@ -1,0 +1,7 @@
+.divider-employment{
+    border-left: 1px solid black;
+    position: absolute;
+    left: -10px;
+    height: 93%;
+    transform: translateY(2rem)
+}

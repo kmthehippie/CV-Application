@@ -1,0 +1,12 @@
+.date-worked{
+    color: rgb(102, 102, 102);
+    font-style: italic;
+}
+.card{
+    border-bottom: 1px dotted black;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-left: 1.25rem;
+}

@@ -1,0 +1,14 @@
+.cv{
+    max-width: 1000px;
+    width: 100%;
+    border: 1px solid black;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    }
+    
+.CVbody{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1rem 1.5rem;
+    margin-top: 0.5rem;
+}

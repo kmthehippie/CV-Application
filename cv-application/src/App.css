@@ -1,0 +1,35 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+
+}
+.body{
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+
+.btn{
+  color: palevioletred;
+  padding: 1rem;
+  border: 1px solid #585858;
+  box-shadow: 5px 10px rgba(0,0,0,0.3);
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.btn:hover, .active{
+  background-image: linear-gradient(rgb(83, 83, 83), #1d1d1d);
+  color: white;
+  transition: 1.3s;
+}
+

@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    bottom:0;
+    width: 100vw;
+    background-color: #fff;
+}
+
+.credits {
+    display: flex;
+    justify-content: center;;
+    width:100%;
+}
+.footer a{
+    font-size: 10px;
+    padding-right: 1rem;
+}

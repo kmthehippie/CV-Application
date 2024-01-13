@@ -1,0 +1,24 @@
+
+.profile{
+    padding: 1rem;
+    position: relative;
+}
+.divider-profile{
+    border-left: 1px solid black;
+    position: absolute;
+    left: -10px;
+    height: 75%;
+    transform: translateY(25%)
+}
+
+.profile p {
+    font-size: 1rem;
+}
+
+.person-logo{
+    position: absolute;
+    top: 1rem;
+    left: -23px;
+    font-size: 1.7rem;
+    color: black;
+}
