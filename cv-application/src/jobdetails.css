@@ -1,0 +1,8 @@
+.input-field-details{
+    width: 75%;
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid #bbb;
+    height: 2rem;
+    font-size: 0.95rem;
+}

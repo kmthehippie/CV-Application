@@ -4,8 +4,13 @@
 }
 
 .skills li{
+    margin-left: 0;
     list-style: none;
     font-size: 1rem;
     border-bottom: 1px dotted black;
     line-height: 1.8rem;
+}
+
+.skills-text{
+    font-size: 0.8rem;   
 }

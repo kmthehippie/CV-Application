@@ -2,33 +2,44 @@ import PropTypes from "prop-types"
 import "./educationCard.css"
 
 function EducationCard(props){
+    const p = props.props
+   
     const today = new Date()
-    const convertGradYear = Number(props.gradYear)
-    const graduated = <p>Graduated in {convertGradYear} at {props.educationalInstitution}</p>
-    const graduating = <p>Graduating in {convertGradYear} from {props.educationalInstitution}</p>
+
+    function convertDate(date){
+        let d = new Date(date);
+        d = d.toLocaleDateString('en-GB', {
+            day: 'numeric', month: 'short', year: 'numeric'
+          })
+
+        return d
+    }
+    
+
+    // date = date.toLocaleDateString('en-GB', {
+    //     day: 'numeric', month: 'short', year: 'numeric'
+    //   })
+    const graduated = <p>Graduated in {convertDate(p.gradYear)} at {p.school}</p>
+    const graduating = <p>Graduating in {convertDate(p.gradYear)} from {p.school}</p>
     
     return(
+        <>
         <div className="card">
-        <h3>{props.degreeName}</h3>
-        {convertGradYear < today.getFullYear() ?  graduated : graduating}
-        <p>{props.text}</p>
+        <h3>{p.degreeName}</h3>
+        {new Date(p.gradYear) < today ?  graduated : graduating}
+       
+        
+        <p>{p.text}</p>
         </div>
+        </>
     )
 }
 
 
 EducationCard.propTypes = {
-    degreeName: PropTypes.string,
-    gradYear: PropTypes.string,
-    text: PropTypes.string,
-    educationalInstitution: PropTypes.string
+    props: PropTypes.object
 }
 
-EducationCard.defaultProps = {
-    degreeName: "MSc Accounting and Dreaming",
-    gradYear: "2004",
-    educationalInstitution: "University of Otago",
-    text: "Summa cum laude. ABC Award for outstanding journalism major. Certified in Level 1 Strategic Communication Certification. Involved as Conference Coordinator, XYZ Journalism Association of America"
-}
+
 
 export default EducationCard

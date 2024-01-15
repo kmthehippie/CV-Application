@@ -39,3 +39,8 @@
 .header-info p{
     padding-right: 1rem;
 }
+
+.instructions{
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+}

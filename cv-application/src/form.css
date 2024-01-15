@@ -1,8 +1,13 @@
+.formoutput{
+    display: flex;
+    width: 100vw;
+}
+
 .cv{
     max-width: 1000px;
     width: 100%;
     border: 1px solid black;
-    padding: 1rem;
+    margin: 1rem;
     margin-bottom: 3rem;
     }
     
@@ -11,4 +16,81 @@
     grid-template-columns: 200px 1fr;
     gap: 1rem 1.5rem;
     margin-top: 0.5rem;
+}
+
+form {
+    max-width: 1000px;
+    margin: 1rem;
+    margin-bottom: 3rem;
+    
+}
+
+fieldset{
+    padding: 1rem;
+
+}
+.input-field{
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid #bbb;
+    width: 100%;
+    height: 2rem;
+    font-size: 0.75rem;
+}
+
+input:active {
+    font-size: 0.8rem;
+    color: rgb(53, 53, 53);
+}
+input:focus{
+    font-size: 0.8rem;
+    color:  rgb(53, 53, 53);
+}
+
+.label-input{
+    font-size: 0.95rem;
+    transition: 0.4s;
+    pointer-events: none;
+}
+
+textarea{
+    width: auto;
+    line-height: 1.35;
+    padding: 0.5rem;
+}
+
+.final-update{
+    background-color: #363636;
+    color: white;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+
+.updateDets{
+    background-color: #009ec5;
+    color: white;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+.deleteBtn{
+    margin-top: 0.25rem;
+    background-color: rgb(109, 0, 0);
+    color: white;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+.addBtn{
+    background-color: rgb(52, 173, 52);
+    color: white;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+.optional{
+    font-size: 0.6rem;
+    font-style: italic;
 }

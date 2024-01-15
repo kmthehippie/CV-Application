@@ -1,8 +1,12 @@
 
 import EmploymentCard from "./EmploymentCard.jsx"
 import "./employmentHx.css"
+import PropTypes from "prop-types"
 
-function EmploymentHx(){
+
+function EmploymentHx(props){
+    const empList = props.props
+
     return(
     <div className="profile">
         <span className="divider-employment"></span>
@@ -10,14 +14,18 @@ function EmploymentHx(){
         work
         </span>
         <h2> &#9733; Employment History  &#9733;</h2>
-        <EmploymentCard />
-        <EmploymentCard />
-        <EmploymentCard /> 
-        <EmploymentCard />
+        {empList.map ((emp)=>{
+            return (
+                <EmploymentCard props={emp} key={emp.company + emp.startDate} />
+            )
+        })}
     </div>
     )
 }
 
+EmploymentHx.propTypes = {
+    props: PropTypes.array
+}
 
 
 

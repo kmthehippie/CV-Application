@@ -4,8 +4,8 @@ export default function Footer (){
     const credits = [
         {id: 1, name: "Rawpixel.com on Freepik", 
         link: "https://www.freepik.com/free-vector/illustration-businesswoman_2606518.htm#query=profile%20placeholder&position=31&from_view=keyword&track=ais&uuid=0a1e52bb-cd1a-4604-9778-e594663bd37a"},
-        {id: 2, name: "XYZ", 
-        link: "https://www.pexels.com/photo/woman-in-black-blazer-sitting-at-the-table-7845470/"},
+        {id: 2, name: "Photo by Sora Shimazaki", 
+        link: "https://www.pexels.com/photo/focused-woman-writing-in-clipboard-while-hiring-candidate-5668869/"},
         {id: 3, name: "Something", 
         link: "https://www.pexels.com/photo/woman-in-black-blazer-sitting-at-the-table-7845470/"},
         {id: 4, name: "YOOOOO", 

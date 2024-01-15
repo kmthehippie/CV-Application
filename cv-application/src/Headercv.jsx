@@ -1,30 +1,26 @@
 import "./headercv.css"
-import React from "react"
 import PropTypes from "prop-types"
 
-function HeaderCV({name, city, phone, title, image}){
+function HeaderCV(headerData){
     //need to get input for uploaded image for now create the template first.
     //the info below need to be passed through by prop. call this fn using usestate later. for now create template.
 
-    const [n, setName] = React.useState(name)
-    const [c, setCity] = React.useState(city)
-    const [t, setTitle] = React.useState(title)
-    const [i, setImage] = React.useState(image)
-    const [p, setPhone] = React.useState(phone)
+
+
+    const data = headerData.headerData
 
     return(
            
         <>
         <div className="header">
-        <img src={i} />
-        <h1 className="header-name">{n}</h1>
+        <img src={data.img} />
+        <h1 className="header-name">{data.name}</h1>
         <div className="header-info">
-            
-                <p>{t}</p>
-                <p><span className="material-symbols-outlined">home_pin</span>
-                {c}</p>
-                <p><span className="material-symbols-outlined">call</span>
-                {p}</p>
+            <p>{data.title}</p>
+            <p><span className="material-symbols-outlined">home_pin</span>
+            {data.city}</p>
+            <p><span className="material-symbols-outlined">call</span>
+            {data.phone}</p>
         </div>
         </div>
         </>
@@ -33,11 +29,7 @@ function HeaderCV({name, city, phone, title, image}){
 }
 
 HeaderCV.propTypes = {
-    name: PropTypes.string,
-    image:  PropTypes.string,
-    title: PropTypes.string,
-    city:  PropTypes.string,
-    phone:  PropTypes.string
+   headerData: PropTypes.object
 }
 
 

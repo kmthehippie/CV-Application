@@ -1,8 +1,10 @@
 
 import "./education.css"
+import PropTypes from "prop-types"
 import EducationCard from "./EducationCard.jsx"
 
-function Education(){
+function Education(props){
+    const eduList = props.props
     
     return(
         <div className="profile">
@@ -12,22 +14,18 @@ function Education(){
         </span>
         <h2> &#9733; Education  &#9733;</h2>
         
-        <EducationCard />
-        <EducationCard degreeName= "A-Level"
-        gradYear= "2000"
-        educationalInstitution= "HELP University College"
-        text= "EDEXCEL Results: Chemistry A, Math A, Biology A, Chemistry B, Physics B"/>
-        <EducationCard degreeName= "SPM High School"
-        gradYear= "1998"
-        educationalInstitution= "Sekolah Menengah Kebangsaan Sri Baiduri"
-        text= "SPM results for Science Stream: Biology A, Chemistry A, Physics B, Math A, AddMath A, Malay A, English A, History B, Moral A."/>
-        <EducationCard degreeName= "UPSR Middle School"
-        gradYear= "1993"
-        educationalInstitution= "Sekolah Kebangsaan Bukit Onetwothree"
-        text= "English A, Math A, Science A, Malay A, Moral A"/>
+        {eduList.map((edu) => {
+            return(
+                <EducationCard props={edu} key ={edu.degreeName} />
+            )
+        })}
     </div>
            
     )
+}
+
+Education.propTypes = {
+    props: PropTypes.array
 }
 
 export default Education

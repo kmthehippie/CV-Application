@@ -1,12 +1,12 @@
 import { useState } from "react"
-import Skills from "./Skills"
+import PropTypes from "prop-types"
+
 
 function SkillForm({setSkills}) {
 
 
-    const [skillList, setSkillList] = useState([
-        ""
-    ])
+    const [skillList, setSkillList] = useState([""])
+
 
 
     const handleSkillAdd = (e)=>{
@@ -14,17 +14,18 @@ function SkillForm({setSkills}) {
         setSkillList([...skillList, ""])
     }
 
-    const handleSkillRemove = (e, index) =>{
+    const handleSkillRemove = (e, i) =>{
         e.preventDefault()
         const list = [...skillList]
-        list.splice(index, 1)
+        list.splice(i, 1)
         setSkillList(list)
     }
 
-    const handleSkillChange = (e, index) =>{
+    const handleSkillChange = (e, i) =>{
+        console.log(e.target.value,i)
         const {value} = e.target
         const list = [...skillList]
-        list[index] = value
+        list[i] = value
         setSkillList(list)
         
     }
@@ -38,38 +39,45 @@ function SkillForm({setSkills}) {
     return(
         <fieldset>
                 <legend>Skills</legend>
-                <p>Include 5 important skills to show that you fit the position. Make sure they match skills that are mentioned in the job listing.</p>
+                <p className="skills-text">Include a few important skills to show that you fit the position. Make sure they match skills that are mentioned in the job listing.</p>
+                
                 {skillList.map((singleSkill, i)=>{
                     return(
-                        <>
+                    <>
                     <div key={i} className="skill-div">
-                        <div className="skill-left">
-                            <label htmlFor="skill">Skill: </label>
-                            <input type="text" name="skill" id="skill" required value={skillList[i]} onChange = {(e) => {handleSkillChange(e,i)}} />
-                            {skillList.length -1 === i && skillList.length < 5 && 
-                            (<button 
-                                type="button"
-                                className="add-skill" 
-                                onClick ={handleSkillAdd}>
-                                Add a skill
-                            </button>)}
-                        </div>
-                        <div className="skill-right">
+                       
+                        <div className="skill">
+                            <label htmlFor="skill" className = "label-input">Skill: </label>
+                            <div>
+                            <input className = "input-field-details" type="text" name="skill" id="skill" required value={singleSkill} onChange = {(e) => handleSkillChange(e,i)} />
                             {skillList.length > 1 && 
                             (<button 
-                                className="remove-skill"
-                                onClick={(e,i) => {handleSkillRemove(e,i)}}
+                                className="remove-skill small-button"
+                                onClick={(e) => {handleSkillRemove(e,i)}}
                             > - </button>)}
+                            {skillList.length -1 === i && skillList.length < 10 && 
+                            (<button 
+                                type="button"
+                                className="add-skill small-button" 
+                                onClick ={handleSkillAdd}>
+                                +
+                            </button>)}
+                            </div>
+                            
                         </div>
+                    
                     </div>
                         </> 
                     )
                    
                 })}
-                <button onClick={(e)=>{handleSkillClick (e)}}>Update</button>
+                <button className="final-update" onClick={(e)=>{handleSkillClick (e)}}>Update Skills</button>
                
         </fieldset>
     )
+}
+SkillForm.propTypes = {
+    setSkills: PropTypes.func
 }
 
 export default SkillForm

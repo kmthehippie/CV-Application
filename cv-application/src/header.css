@@ -1,7 +1,44 @@
-
-.header-top{
-    padding: 3rem;
+.header-forReal{
+    
+    background-image: url("./assets/bgHeader.jpg");
+    background-position: center;
+    background-size: cover;
+    
+}
+.header-opacity{
+    padding-top: 3rem;
+    background: rgba(0,0,0,0.4);
+}
+.header-top{ 
     text-align: center;
-    border: 1px solid #121212;
-    margin: 1rem;
+
+    font-family: "Oswald", sans-serif;
+    color: white
+}
+.logo{
+    width: 3.2rem;
+}
+
+.header-bottom{
+    padding: 0rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    font-family: system-ui, Helvetica, Arial, sans-serif;
+}
+.header-ins{
+   text-align: left;
+   margin-top: 1.25rem;
+}
+
+.subText{
+    text-align: right;
+   margin-top: 1.25rem;
+
+   font-style: italic;
+   line-height: 2.3rem;
+}
+
+.mini{
+    font-size: 0.65rem;
 }
